@@ -1,0 +1,59 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: developer
+      changes:
+        - createTable:
+            tableName: hotels
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: TEXT
+              - column:
+                  name: brand
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_hotel_address
+                    references: addresses(id)
+              - column:
+                  name: phone
+                  type: VARCHAR(30)
+              - column:
+                  name: email
+                  type: VARCHAR(100)
+              - column:
+                  name: check_in
+                  type: VARCHAR(10)
+              - column:
+                  name: check_out
+                  type: VARCHAR(10)
+        - createIndex:
+            indexName: idx_hotel_brand
+            tableName: hotels
+            columns:
+              - column:
+                  name: brand
+        - createIndex:
+            indexName: idx_hotel_address
+            tableName: hotels
+            columns:
+              - column:
+                  name: address_id
