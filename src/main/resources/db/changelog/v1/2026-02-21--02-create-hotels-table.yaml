@@ -20,7 +20,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: description
-                  type: TEXT
+                  type: VARCHAR(255)
               - column:
                   name: brand
                   type: VARCHAR(100)

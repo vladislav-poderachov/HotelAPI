@@ -48,7 +48,7 @@ public class HotelService {
         hotel.setAddress(address);
 
         Hotel savedHotel = hotelRepository.save(hotel);
-        return HotelMapper.toSummaryDto(savedHotel);
+        return HotelMapper.toSummaryDTO(savedHotel);
     }
 
     @Transactional

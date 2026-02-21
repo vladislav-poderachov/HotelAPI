@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      file: v1/2026-02-21--01-create-addresses-table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: v1/2026-02-21--02-create-hotels-table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: v1/2026-02-21--03-create-amenities-table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: v1/2026-02-21--04-create-hotel-amenities-table.yaml
+      relativeToChangelogFile: true
